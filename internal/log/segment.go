@@ -1,7 +1,7 @@
 package log
 
 import (
-	api "distributed-services-in-go/service/api/v1"
+	api "distributed-services-in-go/api/v1"
 	"fmt"
 	"os"
 	"path"

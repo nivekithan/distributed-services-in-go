@@ -41,5 +41,4 @@ func (log *Log) Read(offset int) (Record, error) {
 	}
 
 	return log.records[offset], nil
-
 }

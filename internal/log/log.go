@@ -1,7 +1,6 @@
 package log
 
 import (
-	"fmt"
 	"io"
 	"os"
 	"path"
@@ -10,7 +9,7 @@ import (
 	"strings"
 	"sync"
 
-	api "distributed-services-in-go/service/api/v1"
+	api "distributed-services-in-go/api/v1"
 )
 
 type Log struct {
@@ -129,7 +128,7 @@ func (l *Log) Read(off uint64) (*api.Record, error) {
 	}
 
 	if segment == nil {
-		return nil, fmt.Errorf("Offset out of range: %d", off)
+		return nil, api.ErrOffsetOutOfRange{Offset: off}
 	}
 
 	return segment.Read(off)
